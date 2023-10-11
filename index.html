@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestiti di Sguardi</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Vestiti di Sguardi</h1>
+        <div class="background"></div>
+        <div class="blob"></div>
+        <div class="audio">
+            <div class="audio-item">
+                <h2 class="audio-title">Ombre</h2>
+                <audio controls id="audio1">
+                    <source src="audio/1.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <h2 class="audio-title">Sabbia</h2>
+                <audio controls id="audio2">
+                    <source src="audio/2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <h2 class="audio-title">Prato</h2>
+                <audio controls id="audio3">
+                    <source src="audio/3.mp3" type="audio/mpeg">
+                </audio>
+            </div> 
+            <div class="audio-item">
+                <h2 class="audio-title">Grigio</h2>
+                <audio controls id="audio4">
+                    <source src="audio/4.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div class="audio-item">
+                <h2 class="audio-title">Tela</h2>
+                <audio controls id="audio5">
+                    <source src="audio/5.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <div class="footer">Pagina realizzata da LuciaBerno con l'aiuto di ChatGPT</div>
+    </div>
+    <script>
+        // Estrai il parametro "play" dall'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const playParam = urlParams.get("play");
+
+        // Evidenzia temporaneamente l'audio specificato con un effetto di pulsazione luminosa
+        if (playParam) {
+            const audioItem = document.getElementById(`audio${playParam}`);
+            if (audioItem) {
+                audioItem.classList.add('highlight');
+                setTimeout(() => {
+                    audioItem.classList.remove('highlight');
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>
